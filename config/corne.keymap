@@ -19,6 +19,17 @@
 
 / {
 
+        behaviors {
+          skq: sticky_key_quick_release {
+            compatible = "zmk,behavior-sticky-key";
+            #binding-cells = <1>;
+            bindings = <&kp>;
+            release-after-ms = <1000>;
+            quick-release;
+            ignore-modifiers;
+          };
+        };
+
         conditional_layers {
             compatible = "zmk,conditional-layers";
             tri_layer {
@@ -32,32 +43,32 @@
 
                 default_layer {
                         bindings = <
-   &mo MSE_L &kp Q &kp W &kp F &kp P &kp B   &kp J &kp L  &kp U     &kp Y   &kp SEMI &none
+   &mo MSE_L &kp Q &kp W &kp F &kp P &kp B   &kp J &kp L  &kp U     &kp Y   &kp SEMI &kp BSPC
    &kp ESC   &kp A &kp R &kp S &kp T &kp G   &kp M &kp N  &kp E     &kp I   &kp O    &kp SQT
    &mo KEEB_L &kp Z &kp X &kp C &kp D &kp V   &kp K &kp H  &kp COMMA &kp DOT &kp FSLH &kp ESC
-             &kp LSHFT &mo NAV_L &kp SPACE   &kp RET &mo SYM_L &kp BSPC
+             &kp LSHFT &mo NAV_L &kp SPACE   &kp RET &mo SYM_L &kp DEL
                         >;
                 };
                 symbol_layer {
                         bindings = <
    &none  &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp ASTRK &kp LPAR &kp RPAR &none
-   &kp TAB &none &kp LBKT &kp LBRC  &kp LPAR &none   &none &kp RGUI &kp RALT  &kp RCTRL &kp RSHFT &kp DQT
+   &kp TAB &none &kp LBKT &kp LBRC  &kp LPAR &kp BSLH   &kp PIPE &skq RGUI &skq RALT  &skq RCTRL &skq RSHFT &kp DQT
    &none   &kp PLUS &kp MINUS &kp UNDER  &kp EQUAL &none  &kp UNDER &kp PLUS  &kp LBRC  &kp RBRC &kp QMARK &kp TILDE
-                                     &trans &trans  &trans  &trans &trans &trans
+                                     &kp CAPS &trans  &trans  &trans &trans &trans
                         >;
                 };
                 navigation_layer {
                         bindings = <
-   &kp TAB    &kp N1       &kp N2       &kp N3       &kp N4  &kp N5         &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &kp BSPC
-   &none &kp LSHFT &kp LCTRL  &kp LALT &kp LGUI &kp BSLH        &kp PIPE &kp RPAR &kp RBRC  &kp RBKT &kp RSHFT &none
-   &kp LSHFT  &studio_unlock       &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans &trans
-                                     &trans &trans  &trans  &trans &trans &trans
+   &kp TAB &kp HOME   &kp PG_DN   &kp PG_UP &kp END &none    &none &kp HOME   &kp PG_DN   &kp PG_UP &kp END &kp DEL
+   &none &skq LSHFT &skq LCTRL  &skq LALT &skq LGUI &none        &none &kp RPAR &kp RBRC  &kp RBKT &skq RSHFT &none
+   &none &kp LEFT &kp DOWN &kp UP &kp RIGHT &none            &none &kp LEFT &kp DOWN &kp UP &kp RIGHT &none
+                                     &trans &trans  &trans  &trans &trans &kp BSPC
                         >;
                 };
                 num_layer {
                         bindings = <
    &kp N0  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5          &kp N6  &kp N7  &kp N8  &kp N9  &kp N0  &none
-   &none &kp LSHFT &kp LCTRL  &kp LALT &kp LGUI &none      &none &kp RGUI &kp RALT  &kp RCTRL &kp RSHFT &none
+   &none &skq LSHFT &skq LCTRL  &skq LALT &skq LGUI &none      &none &skq RGUI &skq RALT  &skq RCTRL &skq RSHFT &none
    &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6               &kp F7 &kp F8 &kp F9 &kp F10 &kp F11 &kp 12
                                      &trans &trans  &trans  &trans &trans &trans
                         >;
