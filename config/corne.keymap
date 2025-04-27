@@ -10,10 +10,11 @@
 
 /* Layers */
 #define DEF_L 0
-#define LWR_L 1
-#define RSE_L 2
-#define MISC_L 3
+#define SYM_L 1
+#define NAV_L 2
+#define NUM_L 3
 #define KEEB_L 4
+#define MSE_L 5
 
 
 / {
@@ -21,8 +22,8 @@
         conditional_layers {
             compatible = "zmk,conditional-layers";
             tri_layer {
-                if-layers = <LWR_L RSE_L>;
-                then-layer = <MISC_L>;
+                if-layers = <NAV_L SYM_L>;
+                then-layer = <NUM_L>;
             };
         };
 
@@ -31,13 +32,21 @@
 
                 default_layer {
                         bindings = <
-   &none     &kp Q &kp W &kp F &kp P &kp B   &kp J &kp L  &kp U     &kp Y   &kp SEMI &kp BSPC
+   &mo MSE_L &kp Q &kp W &kp F &kp P &kp B   &kp J &kp L  &kp U     &kp Y   &kp SEMI &none
    &kp ESC   &kp A &kp R &kp S &kp T &kp G   &kp M &kp N  &kp E     &kp I   &kp O    &kp SQT
-   &mo LWR_L &kp Z &kp X &kp C &kp D &kp V   &kp K &kp H  &kp COMMA &kp DOT &kp FSLH &kp ESC
-             &kp LSHFT &mo LWR_L &kp SPACE   &kp RET &mo RSE_L &kp BSPC
+   &mo NAV_L &kp Z &kp X &kp C &kp D &kp V   &kp K &kp H  &kp COMMA &kp DOT &kp FSLH &kp ESC
+             &kp LSHFT &mo NAV_L &kp SPACE   &kp RET &mo SYM_L &kp BSPC
                         >;
                 };
-                lower_layer {
+                symbol_layer {
+                        bindings = <
+   &kp GRAVE  &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp ASTRK &kp LPAR &kp RPAR &none
+   &kp TAB &kp PLUS &kp MINUS &kp UNDER  &kp EQUAL  &none   &none &kp RGUI &kp RALT  &kp RCTRL &kp RSHFT &kp DQT
+   &kp LSHFT &trans   &trans &trans   &trans        &trans  &kp UNDER &kp PLUS  &kp LBRC  &kp RBRC &kp QMARK &kp TILDE
+                                     &trans &trans  &trans  &trans &trans &trans
+                        >;
+                };
+                navigation_layer {
                         bindings = <
    &kp TAB    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &kp BSPC
    &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
@@ -45,15 +54,7 @@
                                     &kp LGUI     &trans       &kp SPACE      &kp RET  &trans   &kp RALT
                         >;
                 };
-                raise_layer {
-                        bindings = <
-   &kp  TAB  &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp ASTRK &kp LPAR &kp RPAR &kp BSPC
-   &kp LCTRL &trans   &trans &trans   &trans   &trans      &kp MINUS &kp EQUAL &kp LBKT  &kp RBKT &kp BSLH &kp GRAVE
-   &kp LSHFT &trans   &trans &trans   &trans   &trans      &kp UNDER &kp PLUS  &kp LBRC  &kp RBRC &kp PIPE &kp TILDE
-                             &kp LGUI &trans   &kp SPACE   &kp RET   &trans    &kp RALT
-                        >;
-                };
-                misc_layer {
+                num_layer {
                         bindings = <
    &kp  TAB  &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp ASTRK &kp LPAR &kp RPAR &kp BSPC
    &kp LCTRL &trans   &trans &trans   &trans   &trans      &kp MINUS &kp EQUAL &kp LBKT  &kp RBKT &kp BSLH &kp GRAVE
@@ -62,6 +63,14 @@
                         >;
                 };
                 keeb_layer {
+                        bindings = <
+   &kp TAB    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &kp BSPC
+   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
+   &kp LSHFT  &studio_unlock       &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans &trans
+                                    &kp LGUI     &trans       &kp SPACE      &kp RET  &trans   &kp RALT
+                        >;
+                };
+                mouse_layer {
                         bindings = <
    &kp  TAB  &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp ASTRK &kp LPAR &kp RPAR &kp BSPC
    &kp LCTRL &trans   &trans &trans   &trans   &trans      &kp MINUS &kp EQUAL &kp LBKT  &kp RBKT &kp BSLH &kp GRAVE
