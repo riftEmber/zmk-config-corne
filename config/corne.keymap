@@ -16,6 +16,10 @@
 #define MSE_L 4
 #define KEEB_L 5
 
+&sl { // Allow sticky mods to chord across sticky layers.
+  ignore-modifiers;
+};
+
 
 / {
 
@@ -27,6 +31,11 @@
             release-after-ms = <1000>;
             quick-release;
             ignore-modifiers;
+          };
+          swapper: swapper {
+            compatible = "zmk,behavior-smart-toggle";
+            #binding-cells = <0>;
+            bindings = <&kp LALT>, <&kp TAB>;
           };
         };
 
@@ -46,7 +55,7 @@
    &mo MSE_L &kp Q &kp W &kp F &kp P &kp B   &kp J &kp L  &kp U     &kp Y   &kp SEMI &kp BSPC
    &kp ESC   &kp A &kp R &kp S &kp T &kp G   &kp M &kp N  &kp E     &kp I   &kp O    &kp SQT
    &mo KEEB_L &kp Z &kp X &kp C &kp D &kp V   &kp K &kp H  &kp COMMA &kp DOT &kp FSLH &kp ESC
-             &kp LSHFT &mo NAV_L &kp SPACE   &kp RET &mo SYM_L &kp DEL
+             &kp LSHFT &sl NAV_L &kp SPACE   &kp RET &sl SYM_L &kp DEL
                         >;
                 };
                 symbol_layer {
@@ -61,7 +70,7 @@
                         bindings = <
    &kp TAB &kp HOME   &kp PG_DN   &kp PG_UP &kp END &none    &none &kp HOME   &kp PG_DN   &kp PG_UP &kp END &kp DEL
    &none &skq LCTRL &skq LSHFT  &skq LALT &skq LGUI &none        &none &kp RPAR &kp RBRC  &kp RBKT &none &none
-   &none &kp LEFT &kp DOWN &kp UP &kp RIGHT &none            &none &kp LEFT &kp DOWN &kp UP &kp RIGHT &none
+   &none &none &none &none &swapper &none            &none &kp LEFT &kp DOWN &kp UP &kp RIGHT &none
                                      &trans &trans  &trans  &trans &trans &kp BSPC
                         >;
                 };
