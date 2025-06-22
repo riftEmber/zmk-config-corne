@@ -16,9 +16,10 @@
 #define MSE_L 4
 #define KEEB_L 5
 
-&sl { // Allow sticky mods to chord across sticky layers.
-  ignore-modifiers;
-};
+/* &sl { // Allow sticky mods to chord across sticky layers. */
+/*   quick-release; */
+/*   ignore-modifiers; */
+/* }; */
 
 
 / {
@@ -55,7 +56,7 @@
    &mo MSE_L &kp Q &kp W &kp F &kp P &kp B   &kp J &kp L  &kp U     &kp Y   &kp SEMI &kp BSPC
    &kp ESC   &kp A &kp R &kp S &kp T &kp G   &kp M &kp N  &kp E     &kp I   &kp O    &kp SQT
    &mo KEEB_L &kp Z &kp X &kp C &kp D &kp V   &kp K &kp H  &kp COMMA &kp DOT &kp FSLH &kp ESC
-             &kp LSHFT &sl NAV_L &kp SPACE   &kp RET &sl SYM_L &kp DEL
+             &kp LSHFT &mo NAV_L &kp SPACE   &kp RET &mo SYM_L &kp DEL
                         >;
                 };
                 symbol_layer {
