@@ -60,7 +60,7 @@
    &mo MSE_L &kp Q &kp W &kp F &kp P &kp B   &kp J &kp L  &kp U     &kp Y   &kp SEMI &kp BSPC
    &kp ESC   &kp A &kp R &kp S &kp T &kp G   &kp M &kp N  &kp E     &kp I   &kp O    &kp SQT
    &mo KEEB_L &kp Z &kp X &kp C &kp D &kp V   &kp K &kp H  &kp COMMA &kp DOT &kp FSLH &kp ESC
-             &kp LSHFT &lt NAV_L SPACE &kp SPACE   &kp RET &lt SYM_L RET &kp DEL
+             &kp LSHFT &lt NAV_L SPACE &kp SPACE   &kp RET &lt SYM_L RET &kp BSPC
                         >;
                 };
                 symbol_layer {
@@ -76,7 +76,7 @@
    &none &kp HOME   &kp PG_DN   &kp PG_UP &kp END &none           &none &kp HOME   &kp PG_DN   &kp PG_UP &kp END &kp DEL
    &kp TAB &skq LCTRL &skq LSHFT  &skq LALT &skq LGUI &none        &none &kp RPAR &kp RBRC  &kp RBKT &kp GT &none
    &none &none &none &none &swapper &none                           &none &kp LEFT &kp DOWN &kp UP &kp RIGHT &none
-                                     &trans &trans  &trans  &trans &trans &kp BSPC
+                                     &trans &trans  &trans  &trans &trans &kp DEL
                         >;
                 };
                 num_layer {
