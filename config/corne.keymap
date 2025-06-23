@@ -38,6 +38,10 @@
             #binding-cells = <0>;
             bindings = <&kp LALT>, <&kp TAB>;
           };
+          lt {
+            tapping-term-ms = <200>;
+            flavor = "tap-unless-interrupted";
+          };
         };
 
         conditional_layers {
@@ -56,7 +60,7 @@
    &mo MSE_L &kp Q &kp W &kp F &kp P &kp B   &kp J &kp L  &kp U     &kp Y   &kp SEMI &kp BSPC
    &kp ESC   &kp A &kp R &kp S &kp T &kp G   &kp M &kp N  &kp E     &kp I   &kp O    &kp SQT
    &mo KEEB_L &kp Z &kp X &kp C &kp D &kp V   &kp K &kp H  &kp COMMA &kp DOT &kp FSLH &kp ESC
-             &kp LSHFT &mo NAV_L &kp SPACE   &kp RET &mo SYM_L &kp DEL
+             &kp LSHFT &lt NAV_L SPACE &kp SPACE   &kp RET &lt SYM_L RET &kp DEL
                         >;
                 };
                 symbol_layer {
