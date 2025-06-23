@@ -73,9 +73,9 @@
                 };
                 navigation_layer {
                         bindings = <
-   &kp TAB &kp HOME   &kp PG_DN   &kp PG_UP &kp END &none    &none &kp HOME   &kp PG_DN   &kp PG_UP &kp END &kp DEL
-   &none &skq LCTRL &skq LSHFT  &skq LALT &skq LGUI &none        &none &kp RPAR &kp RBRC  &kp RBKT &none &none
-   &none &none &none &none &swapper &none            &none &kp LEFT &kp DOWN &kp UP &kp RIGHT &none
+   &none &kp HOME   &kp PG_DN   &kp PG_UP &kp END &none           &none &kp HOME   &kp PG_DN   &kp PG_UP &kp END &kp DEL
+   &kp TAB &skq LCTRL &skq LSHFT  &skq LALT &skq LGUI &none        &none &kp RPAR &kp RBRC  &kp RBKT &none &none
+   &none &none &none &none &swapper &none                           &none &kp LEFT &kp DOWN &kp UP &kp RIGHT &none
                                      &trans &trans  &trans  &trans &trans &kp BSPC
                         >;
                 };
