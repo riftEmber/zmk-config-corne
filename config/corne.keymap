@@ -29,7 +29,7 @@
             compatible = "zmk,behavior-sticky-key";
             #binding-cells = <1>;
             bindings = <&kp>;
-            release-after-ms = <1000>;
+            release-after-ms = <2000>;
             quick-release;
             ignore-modifiers;
           };
@@ -39,7 +39,7 @@
             bindings = <&kp LALT>, <&kp TAB>;
           };
           lt {
-            tapping-term-ms = <200>;
+            tapping-term-ms = <300>;
             flavor = "tap-unless-interrupted";
           };
         };
