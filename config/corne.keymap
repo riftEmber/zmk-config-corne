@@ -42,6 +42,12 @@
             tapping-term-ms = <300>;
             flavor = "tap-unless-interrupted";
           };
+          shift_caps: tap_dance_0 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp LSHFT>, <&kp CAPS>;
+          };
         };
 
         conditional_layers {
@@ -60,7 +66,7 @@
    &mo MSE_L &kp Q &kp W &kp F &kp P &kp B   &kp J &kp L  &kp U     &kp Y   &kp SEMI &kp BSPC
    &kp ESC   &kp A &kp R &kp S &kp T &kp G   &kp M &kp N  &kp E     &kp I   &kp O    &kp SQT
    &mo KEEB_L &kp Z &kp X &kp C &kp D &kp V   &kp K &kp H  &kp COMMA &kp DOT &kp FSLH &kp ESC
-        &kp LSHFT &lt NAV_L SPACE &mo MSE_L   &kp ESC &lt SYM_L RET &kp BSPC
+      &shift_caps &lt NAV_L SPACE &mo MSE_L   &kp ESC &lt SYM_L RET &kp BSPC
                         >;
                 };
                 symbol_layer {
