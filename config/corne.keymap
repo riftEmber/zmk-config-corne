@@ -49,11 +49,13 @@
             bindings = <&kp LSHFT>, <&kp CAPS>;
           };
           my_key_repeat: my_key_repeat {
-             compatible = "zmk,behavior-key-repeat";
-             usage-pages = <HID_USAGE_KEY HID_USAGE_CONSUMER>;
+            compatible = "zmk,behavior-key-repeat";
+            #binding-cells = <0>;
+            usage-pages = <HID_USAGE_KEY HID_USAGE_CONSUMER>;
           };
           lt_repeat: lt_repeat {
             compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
             bindings = <&mo>, <&my_key_repeat>;
             tapping-term-ms = <300>;
           };
