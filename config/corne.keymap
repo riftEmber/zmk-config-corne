@@ -48,7 +48,7 @@
             tapping-term-ms = <200>;
             bindings = <&kp LSHFT>, <&kp CAPS>;
           };
-          my_key_repeat : my_key_repeat {
+          my_key_repeat: my_key_repeat {
              compatible = "zmk,behavior-key-repeat";
              usage-pages = <HID_USAGE_KEY HID_USAGE_CONSUMER>;
           };
