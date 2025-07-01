@@ -52,7 +52,7 @@
              usage-pages = <HID_USAGE_KEY HID_USAGE_CONSUMER>;
           };
           lt_repeat: layer_tap {
-            bindings = <&key_repeat>, <&mo>;
+            bindings = <&mo>, <&key_repeat>;
             tapping-term-ms = <300>;
           };
         };
@@ -73,7 +73,7 @@
    &kp TAB &kp Q &kp W &kp F &kp P &kp B     &kp J &kp L  &kp U     &kp Y   &kp SEMI &kp BSPC
    &kp ESC   &kp A &kp R &kp S &kp T &kp G   &kp M &kp N  &kp E     &kp I   &kp O    &kp SQT
    &mo KEEB_L &kp Z &kp X &kp C &kp D &kp V   &kp K &kp H  &kp COMMA &kp DOT &kp FSLH &kp ESC
-      &shift_caps &lt NAV_L SPACE &lt_repeat 0 MSE_L   &kp ESC &lt SYM_L RET &kp BSPC
+      &shift_caps &lt NAV_L SPACE &lt_repeat MSE_L 0   &kp ESC &lt SYM_L RET &kp BSPC
                         >;
                 };
                 symbol_layer {
