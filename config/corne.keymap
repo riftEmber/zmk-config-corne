@@ -52,7 +52,7 @@
              compatible = "zmk,behavior-key-repeat";
              usage-pages = <HID_USAGE_KEY HID_USAGE_CONSUMER>;
           };
-          lt_repeat {
+          lt_repeat: lt_repeat {
             compatible = "zmk,behavior-hold-tap";
             bindings = <&mo>, <&my_key_repeat>;
             tapping-term-ms = <300>;
