@@ -63,7 +63,7 @@
 
                 default_layer {
                         bindings = <
-   &mo MSE_L &kp Q &kp W &kp F &kp P &kp B   &kp J &kp L  &kp U     &kp Y   &kp SEMI &kp BSPC
+   &kp TAB &kp Q &kp W &kp F &kp P &kp B     &kp J &kp L  &kp U     &kp Y   &kp SEMI &kp BSPC
    &kp ESC   &kp A &kp R &kp S &kp T &kp G   &kp M &kp N  &kp E     &kp I   &kp O    &kp SQT
    &mo KEEB_L &kp Z &kp X &kp C &kp D &kp V   &kp K &kp H  &kp COMMA &kp DOT &kp FSLH &kp ESC
       &shift_caps &lt NAV_L SPACE &mo MSE_L   &kp ESC &lt SYM_L RET &kp BSPC
@@ -72,7 +72,7 @@
                 symbol_layer {
                         bindings = <
    &trans  &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp ASTRK &kp LPAR &kp RPAR &trans
-   &kp TAB &kp LT &kp LBKT &kp LBRC  &kp LPAR &kp BSLH   &kp PIPE &skq RGUI &skq RALT  &skq RSHFT &skq RCTRL &kp DQT
+   &trans &kp LT &kp LBKT &kp LBRC  &kp LPAR &kp BSLH   &kp PIPE &skq RGUI &skq RALT  &skq RSHFT &skq RCTRL &kp DQT
    &none   &kp PLUS &kp MINUS &kp UNDER  &kp EQUAL &none  &kp UNDER &kp PLUS  &kp LBRC  &kp RBRC &kp QMARK &kp TILDE
                                      &trans &trans  &trans  &trans &trans &trans
                         >;
@@ -80,7 +80,7 @@
                 navigation_layer {
                         bindings = <
    &trans &kp HOME   &kp PG_DN   &kp PG_UP &kp END &none           &none &kp HOME   &kp PG_DN   &kp PG_UP &kp END &kp DEL
-   &kp TAB &skq LCTRL &skq LSHFT  &skq LALT &skq LGUI &none        &none &kp RPAR &kp RBRC  &kp RBKT &kp GT &none
+   &trans &skq LCTRL &skq LSHFT  &skq LALT &skq LGUI &none        &none &kp RPAR &kp RBRC  &kp RBKT &kp GT &none
    &none &none &none &none &swapper &none                           &none &kp LEFT &kp DOWN &kp UP &kp RIGHT &none
                                      &trans &trans  &trans  &trans &trans &kp DEL
                         >;
